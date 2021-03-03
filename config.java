@@ -16,3 +16,6 @@ public static float autonSpeed = (float) .3; //speed of motors in autonomous, .8
 }
 
 //when you change some press CTRL + S on the keyboard, then right click(2 finger click) build.gradle and click deploy robot code
+
+
+// This was added like this so that my teammates could easier change these things while I wasn't there
