@@ -82,12 +82,22 @@ public void teleopInit() {
   Joystick joystick = new Joystick(0);
   @Override
   public void teleopPeriodic() {
+    if(joystick.getRawButton(5) == false){
     //motors a and c
     Drivetrain.m_robotDrive.tankDrive(Drivetrain.m_driverController.getY(Hand.kLeft) * -config.MaxSpeed - 0.025,
     Drivetrain.m_driverController.getY(Hand.kRight)* -config.MaxSpeed);
     //motors b and d
     Drivetrain.m_robotDrive1.tankDrive(Drivetrain.m_driverController.getY(Hand.kLeft) * -config.MaxSpeed - 0.025,
     Drivetrain.m_driverController.getY(Hand.kRight)* -config.MaxSpeed);
+    }
+    else{
+      //motors a and c
+      Drivetrain.m_robotDrive.tankDrive(Drivetrain.m_driverController.getY(Hand.kLeft) * 0.6 - 0.025,
+      Drivetrain.m_driverController.getY(Hand.kRight)* -0.6);
+      //motors b and d
+      Drivetrain.m_robotDrive1.tankDrive(Drivetrain.m_driverController.getY(Hand.kLeft) * -0.6 - 0.025,
+      Drivetrain.m_driverController.getY(Hand.kRight)* -0.6);
+    }
         if(joystick.getRawButton(4)){
             Drivetrain.m_launcher.set(config.LauncherSpeed);
         }
